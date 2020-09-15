@@ -1,13 +1,10 @@
 version: "3.7"
-
+#http://{host IP}:6440
 services:
   mini_project2:
-    build:
-      context: .
-    image: mini_project2:$VERSION
-    container_name: mini_project2
+    build: ./app
     ports:
-      - "3810:6440"
+      - "6440:6440"
     environment:
       - TARGET=$TARGET
     restart: unless-stopped
